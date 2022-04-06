@@ -109,7 +109,7 @@ a {
 
 .posts-wrp {
   width: calc(100% / 4 - 4px);
-  height: 320px;
+  min-height: 320px;
   background-color: #000000;
   z-index: 1;
   position: relative;
@@ -577,8 +577,8 @@ a {
   margin-top: -41px;
   width: 100%;
   border: 3px solid #b59f5b;
-  padding: 40px 25px 9px 25px;
-  min-height: 280px;
+  padding: 40px 25px 25px;
+  flex-grow: 1;
 }
 
 .product-name {
@@ -636,7 +636,6 @@ a {
 .product-buy {
   align-self: flex-end;
   width: 140px;
-  height: 48px;
   background-color: #b59f5b;
   font-family: "Open Sans", Arial, sans-serif;
   font-weight: 700;
@@ -644,6 +643,8 @@ a {
   text-transform: uppercase;
   color: #ffffff;
   border: none;
+  text-align: center;
+  padding: 15px 0;
 }
 
 .product-buy:hover {
@@ -662,7 +663,7 @@ a {
 }
 
 .hidden {
-  display: none;
+  display: flex;
 }
 
 .popup {
@@ -670,11 +671,8 @@ a {
   position: relative;
   z-index: 20;
   max-width: 25vw;
-  max-height: 80vh;
-  flex: 1 1 auto;
   padding: 53px 30px;
   margin: auto;
-  flex: 0 1 auto;
 }
 
 .popup::after {
@@ -924,7 +922,6 @@ a {
     background-color: #000000;
     z-index: 5;
     width: 100%;
-    height: 42vh;
     padding-top: 42px;
   }
 
@@ -932,7 +929,7 @@ a {
     content: "";
     background-image: url("../images/banner-bg-tablet.jpg");
     background-repeat: no-repeat;
-    background-size: 100% 42vh;
+    background-size: cover;
     background-position: center;
     position: absolute;
     top: 0;
@@ -968,7 +965,7 @@ a {
     content: "";
     position: absolute;
     top: 1px;
-    right: -12px;
+    right: 0;
     width: 23px;
     height: 3px;
     background-color: #ffffff;
@@ -978,7 +975,7 @@ a {
     content: "";
     position: absolute;
     top: 17px;
-    right: -12px;
+    right: 0;
     width: 23px;
     height: 3px;
     background-color: #ffffff;
@@ -988,21 +985,22 @@ a {
     display: block;
     position: absolute;
     top: 9px;
-    right: -12px;
+    right: 0;
     width: 23px;
     height: 3px;
     background-color: #ffffff;
   }
 
   .title-text {
-    margin: 0;
+    margin-top: 92px;
   }
 
   .title-name {
     font-size: 2.5rem;
     line-height: 1.3;
     z-index: 20;
-    margin-top: 92px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .trend-wrp {
@@ -1017,7 +1015,7 @@ a {
     width: calc(100%/2 - 4px);
     margin-bottom: 4px;
     margin-left: 0;
-    max-height: 247px;
+    min-height: 247px;
   }
 
   .posts-wrp:nth-last-child(-n+2) {
@@ -1109,7 +1107,7 @@ a {
     margin-left: 22px;
   }
 
-  .product-card:not(:nth-last-child(-n + 2)) {
+  .product-card {
     margin-bottom: 28px;
   }
 
@@ -1143,6 +1141,15 @@ a {
 }
 
 @media (min-width: 641px) and (max-width: 1199px) and (orientation: landscape) {
+
+  .title-text {
+    margin-top: 30px;
+  }
+
+  .title-name {
+    font-size: 1.6rem;
+  }
+
   .posts-wrp {
     width: calc(100% / 4 - 4px);
     margin-left: 4px;
@@ -1151,6 +1158,34 @@ a {
   .posts-wrp:first-child {
     margin-left: 0;
   }
+
+  .post-wrp {
+    padding: 20px 10px;
+  }
+
+  .header-wrp {
+    font-size: 0.8rem;
+  }
+
+  .tag-wrp:nth-child(n + 2) {
+    margin-left: 10px;
+
+  }
+
+  .tag-wrp a {
+    font-size: 0.8rem;
+  }
+
+  .popup {
+    max-height: 85vh;
+  }
+
+  .popup-form {
+    overflow: auto;
+    padding-right: 10px;
+    max-height: 237px;
+  }
+
 }
 
 @media (max-width: 640px) {
@@ -1159,17 +1194,17 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 67vh;
     width: 100%;
     position: relative;
     z-index: 5;
+    padding-top: 31px;
   }
 
   .header::after {
     content: "";
     background-image: url("../images/banner-mobile.jpg");
     background-repeat: no-repeat;
-    background-size: 100% 100vh;
+    background-size: cover;
     background-position: center;
     position: absolute;
     top: 0;
@@ -1182,7 +1217,6 @@ a {
 
   .header-container {
     width: calc(100% - 2 * 15px);
-    height: 33vh;
     z-index: 3;
     flex-direction: column-reverse;
     z-index: 20;
@@ -1190,7 +1224,7 @@ a {
 
   .header-logo {
     width: calc(100% - 30px);
-    margin: 0 15px 44px 15px;
+    margin: 185px 15px 45px 15px;
     align-self: flex-start;
   }
 
@@ -1213,7 +1247,7 @@ a {
     content: "";
     position: absolute;
     top: 9px;
-    right: -8px;
+    right: 0;
     width: 23px;
     height: 3px;
     background-color: #ffffff;
@@ -1223,7 +1257,7 @@ a {
     content: "";
     position: absolute;
     top: 25px;
-    right: -8px;
+    right: 0;
     width: 23px;
     height: 3px;
     background-color: #ffffff;
@@ -1233,7 +1267,7 @@ a {
     display: block;
     position: absolute;
     top: 17px;
-    right: -8px;
+    right: 0;
     width: 23px;
     height: 3px;
     background-color: #ffffff;
@@ -1263,7 +1297,7 @@ a {
     flex-basis: 100%;
     margin-bottom: 3px;
     margin-left: 0;
-    max-height: 232px;
+    min-height: 232px;
   }
 
   .posts-wrp:last-child {
@@ -1392,7 +1426,6 @@ a {
     padding: 35px 19px 25px 19px;
     justify-content: center;
     margin-top: -33px;
-    min-height: 260px;
   }
 
   .product-name {
@@ -1402,9 +1435,16 @@ a {
 
   .popup {
     padding: 30px 25px;
-    max-width: 324px;
-    max-height: 72vh;
+    min-width: 320px;
+    max-height: 85vh;
   }
+
+  .popup-form {
+    overflow: auto;
+    padding-right: 10px;
+  }
+
+
 
   .form-row:last-child {
     margin-bottom: 0;
@@ -1426,6 +1466,15 @@ a {
 }
 
 @media (max-width: 640px) and (orientation: landscape) {
+  .header {
+    padding-top: 31px;
+  }
+
+  .header-container {
+    margin-top: 0;
+
+  }
+
   .posts-wrp {
     width: calc(100% / 2 - 4px);
     margin-bottom: 4px;
@@ -1443,5 +1492,36 @@ a {
 
   .post-wrp {
     padding: 15px;
+  }
+
+  .popup-form {
+    max-height: 53vh;
+    overflow: auto;
+    padding-right: 10px;
+  }
+  
+}
+
+@media (max-width: 400px) {
+  .popup {
+    max-width: 90vw;
+    padding: 30px 10px 30px 25px;
+  }
+  .popup-form {
+    max-height: 300px;
+    overflow: auto;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 500px) and (orientation: landscape) {
+  .popup {
+    max-width: 90vw;
+    padding: 30px 10px 30px 25px;
+  }
+  .popup-form {
+    max-height: 130px;
+    overflow: auto;
+    padding-right: 10px;
   }
 }
