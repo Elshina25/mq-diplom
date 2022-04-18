@@ -1185,7 +1185,14 @@ a {
   .popup-form {
     overflow: auto;
     padding-right: 10px;
-    max-height: 237px;
+    max-height: 11.8rem;
+  }
+
+  @media (min-height: 700px) and (orientation: landscape) {
+    
+    .popup-form {
+      max-height: none;
+    }
   }
 
 }
