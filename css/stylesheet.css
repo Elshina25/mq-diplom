@@ -42,6 +42,7 @@ a {
   width: 180px;
 }
 
+
 .menu-list {
   list-style-type: none;
   display: flex;
@@ -72,9 +73,9 @@ a {
   font-size: 2.8rem;
   color: #ffffff;
   line-height: 1.6;
-  max-width: 695px;
   margin: 0 auto;
   text-transform: uppercase;
+  font-weight: 700;
 }
 
 .trend-wrp {
@@ -170,7 +171,7 @@ a {
   flex-shrink: 0;
   flex-direction: column;
   border: 3px solid #b59f5b;
-  margin: 0 24px 14px 24px;
+  margin: 14px 24px;
   padding: 22px 17px 30px 20px;
   z-index: 3;
 }
@@ -1028,7 +1029,7 @@ a {
 
   .post-wrp {
     padding: 35px 27px;
-    margin: 0 20px 10px 20px;
+    margin: 10px 20px;
   }
 
   .tag-wrp {
@@ -1153,6 +1154,7 @@ a {
   .posts-wrp {
     width: calc(100% / 4 - 4px);
     margin-left: 4px;
+    margin-bottom: 0;
   }
 
   .posts-wrp:first-child {
@@ -1183,7 +1185,14 @@ a {
   .popup-form {
     overflow: auto;
     padding-right: 10px;
-    max-height: 237px;
+    max-height: 11.8rem;
+  }
+
+  @media (min-height: 700px) and (orientation: landscape) {
+    
+    .popup-form {
+      max-height: none;
+    }
   }
 
 }
@@ -1225,7 +1234,11 @@ a {
   .header-logo {
     width: calc(100% - 30px);
     margin: 185px 15px 45px 15px;
-    align-self: flex-start;
+  }
+
+  .header-logo img {
+    max-width: calc(100% - 60px);
+    margin: 0 30px;
   }
 
   .header-menu {
@@ -1305,7 +1318,7 @@ a {
   }
 
   .post-wrp {
-    margin: 0 15px 10px 15px;
+    margin: 10px 15px;
     padding: 35px 27px;
   }
 
