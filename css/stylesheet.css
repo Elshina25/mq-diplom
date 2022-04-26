@@ -65,15 +65,16 @@ a {
 }
 
 .title-text {
-  margin-top: 105px;
+  padding-top: 105px;
   text-align: center;
+  margin: 0 auto;
+  max-width: 682px;
 }
 .title-name {
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 2.8rem;
   color: #ffffff;
   line-height: 1.6;
-  margin: 0 auto;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -993,14 +994,15 @@ a {
   }
 
   .title-text {
-    margin-top: 92px;
+    padding-top: 92px;
+    margin: 0 auto;
+    max-width: 607px;
   }
 
   .title-name {
     font-size: 2.5rem;
-    line-height: 1.3;
+    line-height: 1.4;
     z-index: 20;
-    margin: 0 auto;
     text-align: center;
   }
 
@@ -1143,10 +1145,6 @@ a {
 
 @media (min-width: 641px) and (max-width: 1199px) and (orientation: landscape) {
 
-  .title-text {
-    margin-top: 30px;
-  }
-
   .title-name {
     font-size: 1.6rem;
   }
@@ -1288,7 +1286,8 @@ a {
 
   .title-text {
     width: calc(100% - 60px);
-    margin: 0 30px;
+    margin: 0 auto;
+    padding-top: 0;
     z-index: 20;
   }
 
